@@ -1,6 +1,5 @@
 .idea/
 resources/public/js/
-resources/public/css/
 *.log
 pom.xml
 *.iml

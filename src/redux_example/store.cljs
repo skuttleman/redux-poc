@@ -30,4 +30,4 @@
                             :decremento dec'er
                             :bicremento bic'er}))
 
-(def store (collaj/create-custom-store r/atom reducer (cen/with-log-middleware js/console.log)))
+(def store (collaj/create-custom-store r/atom reducer (cen/with-log-middleware (comp js/console.log pr-str))))

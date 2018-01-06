@@ -7,16 +7,16 @@
 (defn app [{:keys [incremento bicremento decremento]} dispatch]
   [:div.app
    [:div "I only increase:" incremento]
-   [:div "I only decrease:" decremento]
    [:div "I go both ways:" bicremento]
+   [:div "I only decrease:" decremento]
    [:div.buttons
     [:button {:on-click #(dispatch [:counter/increment])} "( + )"]
     [:button {:on-click #(dispatch [:counter/decrement])} "( - )"]]])
 
-(defn app-wrapper [store x]
+(defn app-wrapper [store]
   (let [{:keys [dispatch get-state]} store]
     (fn []
       [app (get-state) dispatch])))
 
-(r/render-component [app-wrapper store/store 3]
+(r/render-component [app-wrapper store/store]
   (.getElementById js/document "app"))
